@@ -74,7 +74,6 @@
 | 프로젝트 최종 보고서 | [PDF 열기](docs/Doodly_Final_Report.pdf) · [편집용 Markdown](docs/FINAL_REPORT.md) |
 | APK 다운로드 | [Doodly v1.0 Debug APK](releases/Doodly-v1.0-debug.apk) |
 
-영상 촬영 순서는 [VIDEO_GUIDE.md](docs/VIDEO_GUIDE.md), 실제로 읽을 수 있는 10분 전체 대본은 [10_MIN_PRESENTATION_SCRIPT.md](docs/10_MIN_PRESENTATION_SCRIPT.md)에 작성했습니다.
 
 ## 시스템 아키텍처
 
