@@ -44,7 +44,13 @@ README의 영상 링크는 아래 순서로 촬영한 뒤 YouTube 공개 또는 
 
 > Kotlin과 Jetpack Compose로 UI를 구현했고, MVVM과 Repository 구조, Room Flow, Retrofit, Gemini, AlarmManager, FileProvider를 사용했습니다. Doodly는 짧은 입력을 시각적 회고 경험으로 바꾸는 앱입니다.
 
-## 2. 10분 상세 발표 구성
+## 2. 10분 상세 발표
+
+실제로 그대로 읽을 수 있는 전체 발표 대본은 아래 문서에 작성했습니다.
+
+**[Doodly 10분 상세 발표 대본 열기](10_MIN_PRESENTATION_SCRIPT.md)**
+
+### 발표 구성 요약
 
 ### 0:00-1:00 문제 정의와 기획 의도
 
@@ -113,4 +119,3 @@ README의 영상 링크는 아래 순서로 촬영한 뒤 YouTube 공개 또는 
 - 영상 설명란에 GitHub 링크 추가
 - YouTube 업로드 후 공개 또는 일부 공개 상태 확인
 - README의 TODO 링크 두 곳 교체
-

@@ -74,7 +74,7 @@
 | 프로젝트 최종 보고서 | [PDF 열기](docs/Doodly_Final_Report.pdf) · [편집용 Markdown](docs/FINAL_REPORT.md) |
 | APK 다운로드 | [Doodly v1.0 Debug APK](releases/Doodly-v1.0-debug.apk) |
 
-영상 촬영 순서와 발표 대본은 [VIDEO_GUIDE.md](docs/VIDEO_GUIDE.md)에 작성했습니다.
+영상 촬영 순서는 [VIDEO_GUIDE.md](docs/VIDEO_GUIDE.md), 실제로 읽을 수 있는 10분 전체 대본은 [10_MIN_PRESENTATION_SCRIPT.md](docs/10_MIN_PRESENTATION_SCRIPT.md)에 작성했습니다.
 
 ## 시스템 아키텍처
 
@@ -204,5 +204,6 @@ adb shell am start -a android.intent.action.VIEW -d "doodly://diary/1"
 
 - [프로젝트 최종 보고서](docs/FINAL_REPORT.md)
 - [영상 촬영 및 발표 가이드](docs/VIDEO_GUIDE.md)
+- [10분 상세 발표 전체 대본](docs/10_MIN_PRESENTATION_SCRIPT.md)
 - [제출 전 체크리스트](docs/SUBMISSION_CHECKLIST.md)
 
