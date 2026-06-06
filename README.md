@@ -69,7 +69,7 @@
 
 | 자료 | 링크 |
 |---|---|
-| 2분 요약 영상 | **[TODO: 2분 요약 영상 YouTube 또는 공개 URL 입력]** |
+| 2분 요약 영상 | **[(https://youtube.com/shorts/7BKu9byTO4I?si=FEyI5pFiT8EWsz7Y)]** |
 | 10분 상세 발표 영상 | **[TODO: 10분 상세 발표 YouTube URL 입력]** |
 | 프로젝트 최종 보고서 | [PDF 열기](docs/Doodly_Final_Report.pdf) · [편집용 Markdown](docs/FINAL_REPORT.md) |
 | APK 다운로드 | [Doodly v1.0 Debug APK](releases/Doodly-v1.0-debug.apk) |
