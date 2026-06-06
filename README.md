@@ -194,7 +194,4 @@ adb shell am start -a android.intent.action.VIEW -d "doodly://diary/1"
 ## 문서
 
 - [프로젝트 최종 보고서](docs/FINAL_REPORT.md)
-- [영상 촬영 및 발표 가이드](docs/VIDEO_GUIDE.md)
-- [10분 상세 발표 전체 대본](docs/10_MIN_PRESENTATION_SCRIPT.md)
-- [제출 전 체크리스트](docs/SUBMISSION_CHECKLIST.md)
 
