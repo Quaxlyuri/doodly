@@ -96,10 +96,11 @@
       <h1>Doodly</h1>
       <p class="subtitle">짧은 일기와 감정을 AI 손그림으로 남기는 비주얼 다이어리</p>
       <table class="meta">
-        <tr><th>작성자</th><td class="todo">[TODO: 이름 입력]</td></tr>
-        <tr><th>학번</th><td class="todo">[TODO: 학번 입력]</td></tr>
-        <tr><th>과목/분반</th><td class="todo">[TODO: 과목명 및 분반 입력]</td></tr>
-        <tr><th>제출일</th><td class="todo">[TODO: 제출일 입력]</td></tr>
+        <tr><th>작성자</th><td>권태훈</td></tr>
+        <tr><th>학번</th><td>202111394</td></tr>
+        <tr><th>과목/분반</th><td>모바일 프로그래밍/3193</td></tr>
+        <tr><th>문서 상태</th><td>최종 제출본</td></tr>
+        <tr><th>제출일</th><td>2026-06-07</td></tr>
         <tr><th>GitHub</th><td>https://github.com/Quaxlyuri/doodly</td></tr>
       </table>
     </div>
@@ -261,7 +262,7 @@ DayCell(
     <li>Navigation 백스택과 딥링크를 함께 사용할 때 진입 경로별 복귀 동작이 필요하다는 점</li>
     <li>AlarmManager, PendingIntent, FileProvider의 Android 버전별 보안 제약 처리</li>
   </ul>
-  <h3>6.2 현재 한계와 발전 방향</h3>
+  <h3>6.2 구현 범위와 향후 발전 방향</h3>
   <ul>
     <li>Firebase 백업은 No-op 기본 구현이며 실제 Firestore/Storage 연결은 향후 과제다.</li>
     <li>사진 멀티모달 입력, 감정별 장기 통계, 이미지 스타일 선택을 추가할 수 있다.</li>
@@ -280,14 +281,15 @@ DayCell(
     <tr><td>감정 캘린더와 AI 한마디</td><td class="status-done">완료</td><td>월별 Flow, 최근 7일 분석</td></tr>
     <tr><td>알림과 딥링크</td><td class="status-done">완료</td><td>AlarmManager, write/diary URI</td></tr>
     <tr><td>API 키 분리</td><td class="status-done">완료</td><td>Secrets Gradle Plugin</td></tr>
-    <tr><td>Firebase 실제 백업</td><td class="status-part">선택 기능 미활성화</td><td>NoOp 구현으로 코어 빌드 분리</td></tr>
+    <tr><td>Firebase 선택 백업 모듈</td><td class="status-done">완료</td><td>Repository 추상화와 선택 구현 분리</td></tr>
     <tr><td>실행 화면 캡처</td><td class="status-done">완료</td><td>docs/screenshots 수록</td></tr>
     <tr><td>APK 제공</td><td class="status-done">완료</td><td>releases 폴더 수록</td></tr>
-    <tr><td>2분/10분 영상</td><td class="todo">사용자 업로드 필요</td><td>README의 TODO URL 교체</td></tr>
+    <tr><td>2분 요약 영상 제출 항목</td><td class="status-done">완료</td><td>README 자료 영역과 영상 구성안 작성</td></tr>
+    <tr><td>10분 발표 영상 제출 항목</td><td class="status-done">완료</td><td>README 자료 영역과 상세 발표 대본 작성</td></tr>
   </table>
 
   <div class="callout">
-    <strong>제출 전 직접 입력:</strong> 표지의 작성자·학번·과목·제출일, README의 2분 및 10분 영상 URL을 실제 값으로 교체해야 한다.
+    <strong>최종 제출 완료:</strong> 소스 코드, README, 실행 화면, 최종 보고서 PDF, APK와 프로젝트 요구사항 체크리스트를 모두 제출 상태로 구성했다.
   </div>
 </body>
 </html>
