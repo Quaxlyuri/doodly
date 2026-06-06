@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doodly 프로젝트 최종 보고서</title>
+  <style>
+    @page { size: A4; margin: 18mm 16mm 20mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #2f2a35;
+      font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    h1, h2, h3 { color: #292431; line-height: 1.3; page-break-after: avoid; }
+    h1 { font-size: 28pt; margin: 0 0 12px; }
+    h2 {
+      margin: 34px 0 12px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid #ff6b91;
+      font-size: 19pt;
+    }
+    h3 { margin: 24px 0 8px; font-size: 13.5pt; }
+    p, li { orphans: 3; widows: 3; }
+    a { color: #d93f6b; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
+    th, td { border: 1px solid #e4dce2; padding: 8px 9px; vertical-align: top; }
+    th { background: #fff1f4; text-align: left; }
+    code { font-family: Consolas, monospace; font-size: 9pt; }
+    pre {
+      white-space: pre-wrap;
+      background: #f8f5f7;
+      border-radius: 12px;
+      padding: 12px 14px;
+      page-break-inside: avoid;
+    }
+    .cover {
+      min-height: 245mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      page-break-after: always;
+    }
+    .cover-card {
+      border-radius: 30px;
+      padding: 42px;
+      background: linear-gradient(135deg, #ffe3e7, #ffe7d8 54%, #eee7ff);
+    }
+    .tag { color: #ff5f87; font-size: 13pt; font-weight: 700; }
+    .subtitle { margin: 0 0 30px; color: #756d7c; font-size: 14pt; }
+    .meta { margin-top: 35px; }
+    .toc { page-break-after: always; }
+    .architecture {
+      padding: 18px;
+      border-radius: 16px;
+      background: #fff5f7;
+      text-align: center;
+      font-weight: 700;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 12px 0 22px;
+      page-break-inside: avoid;
+    }
+    .shots.two { grid-template-columns: repeat(2, 1fr); }
+    figure { margin: 0; text-align: center; }
+    figure img {
+      width: 100%;
+      max-height: 215mm;
+      object-fit: contain;
+      border: 1px solid #eee6eb;
+      border-radius: 12px;
+    }
+    figcaption { margin-top: 5px; color: #77707c; font-size: 8.5pt; }
+    .callout {
+      padding: 12px 15px;
+      border-left: 4px solid #ff6b91;
+      background: #fff5f7;
+      page-break-inside: avoid;
+    }
+    .page-break { page-break-before: always; }
+    .status-done { color: #16764a; font-weight: 700; }
+    .status-part { color: #b46700; font-weight: 700; }
+    .todo { color: #d22755; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div class="cover-card">
+      <div class="tag">Android Visual Diary</div>
+      <h1>Doodly</h1>
+      <p class="subtitle">짧은 일기와 감정을 AI 손그림으로 남기는 비주얼 다이어리</p>
+      <table class="meta">
+        <tr><th>작성자</th><td class="todo">[TODO: 이름 입력]</td></tr>
+        <tr><th>학번</th><td class="todo">[TODO: 학번 입력]</td></tr>
+        <tr><th>과목/분반</th><td class="todo">[TODO: 과목명 및 분반 입력]</td></tr>
+        <tr><th>제출일</th><td class="todo">[TODO: 제출일 입력]</td></tr>
+        <tr><th>GitHub</th><td>https://github.com/Quaxlyuri/doodly</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="toc">
+    <h2>목차</h2>
+    <ol>
+      <li>프로젝트 개요 및 기획 의도</li>
+      <li>시스템 아키텍처 및 기술 스택 선정 이유</li>
+      <li>핵심 기능 구현 세부 사항</li>
+      <li>UI/UX 디자인 콘셉트</li>
+      <li>트러블 슈팅 및 문제 해결</li>
+      <li>프로젝트 후기 및 향후 발전 방향</li>
+      <li>프로젝트 요구사항 만족 여부</li>
+    </ol>
+  </section>
+
+  <h2>1. 프로젝트 개요 및 기획 의도</h2>
+  <h3>1.1 개발 배경</h3>
+  <p>일기는 하루를 돌아보고 감정을 정리하는 좋은 도구지만, 매일 긴 글을 써야 한다는 부담 때문에 습관으로 만들기 어렵다. 또한 텍스트만 쌓이는 기존 일기 앱은 사용자가 과거 기록을 다시 열어볼 동기를 충분히 제공하지 못한다.</p>
+  <p>Doodly는 사용자가 한두 문장의 짧은 기록과 감정만 선택하면 AI가 그날의 분위기를 손그림 이미지로 표현하도록 기획했다. 적은 입력으로 하루를 남기고, 갤러리와 감정 캘린더에서 시각적으로 기억을 돌아보는 경험이 핵심이다.</p>
+
+  <h3>1.2 핵심 가치</h3>
+  <ol>
+    <li><strong>낮은 작성 부담:</strong> 긴 글 대신 한두 문장과 감정 선택만 요구한다.</li>
+    <li><strong>시각적 회고:</strong> 텍스트를 AI 일러스트로 변환해 다시 보고 싶은 기록을 만든다.</li>
+    <li><strong>감정 흐름 확인:</strong> 날짜별 감정과 최근 7일의 변화를 캘린더에서 확인한다.</li>
+    <li><strong>기록 지속성:</strong> 매일 알림과 단순한 작성 흐름으로 꾸준한 기록을 돕는다.</li>
+  </ol>
+
+  <h3>1.3 사용자 흐름</h3>
+  <div class="architecture">앱 실행 → 작성 → 날짜·감정·일기 입력 → AI 이미지 생성 → 저장 → 갤러리·캘린더 회고 → 공유</div>
+
+  <h2>2. 시스템 아키텍처 및 기술 스택 선정 이유</h2>
+  <h3>2.1 MVVM + Repository</h3>
+  <div class="architecture">Compose UI → ViewModel → Repository → DAO → RoomDatabase(SQLite)</div>
+  <p>Compose UI는 사용자 입력을 ViewModel에 전달하고 Flow를 <code>collectAsState()</code>로 관찰한다. ViewModel은 화면 상태와 비동기 작업을 관리하며, Repository는 Room과 네트워크 구현을 추상화한다. Hilt 대신 AppContainer와 ViewModelProvider.Factory를 사용해 의존성을 수동 주입했다.</p>
+
+  <h3>2.2 AI 처리 구조</h3>
+  <div class="architecture">일기 + 감정 → Gemini 프롬프트 → 이미지 REST API → Base64 디코딩 → 내부 PNG 저장 → Room 경로 저장 → Coil 표시</div>
+  <p>프롬프트 생성과 이미지 생성을 분리했으며, 키 누락·네트워크 오류·응답 오류 시 감정 색상의 로컬 폴백 이미지를 생성해 작성 흐름을 유지한다.</p>
+
+  <h3>2.3 기술 스택</h3>
+  <table>
+    <tr><th>구분</th><th>기술</th><th>선정 이유</th></tr>
+    <tr><td>Language</td><td>Kotlin, Java 17</td><td>코루틴과 Flow를 활용한 Android 개발</td></tr>
+    <tr><td>UI</td><td>Jetpack Compose, Material 3</td><td>상태 기반 UI와 애니메이션</td></tr>
+    <tr><td>Database</td><td>Room 2.8.4, KSP</td><td>타입 안전한 SQLite와 Flow 지원</td></tr>
+    <tr><td>AI</td><td>Gemini SDK, Gemini 이미지 API</td><td>프롬프트 구조화와 이미지 생성</td></tr>
+    <tr><td>Network</td><td>Retrofit, OkHttp, Gson</td><td>명시적인 REST 요청과 DTO 관리</td></tr>
+    <tr><td>Image</td><td>Coil Compose</td><td>내부 파일 이미지 비동기 표시</td></tr>
+    <tr><td>Navigation</td><td>Navigation Compose</td><td>하단 탭, 상세, 딥링크 통합</td></tr>
+    <tr><td>Android</td><td>AlarmManager, FileProvider</td><td>정시 알림과 안전한 파일 공유</td></tr>
+  </table>
+
+  <h2>3. 핵심 기능 구현 세부 사항</h2>
+  <h3>3.1 날짜별 일기 작성 및 수정</h3>
+  <p>날짜별 한 편만 저장하기 위해 Room Entity의 date 열에 unique index를 설정했다. 날짜를 선택하면 기존 기록을 먼저 조회하고, 존재하면 입력값을 복원해 수정 모드로 전환한다.</p>
+  <pre><code>@Entity(
+    tableName = "diary",
+    indices = [Index(value = ["date"], unique = true)]
+)
+
+private fun safeDate(value: Long): Long =
+    normalizeDate(value).coerceAtMost(todayMillis())
+
+val id = if (state.editingId != null) {
+    diaryRepository.update(entry)
+    state.editingId
+} else {
+    diaryRepository.insert(entry)
+}</code></pre>
+  <p>이 방식은 같은 날짜의 중복 데이터가 캘린더 셀에서 충돌하는 문제를 방지한다. DatePicker, 캘린더 셀, ViewModel에서 미래 날짜를 단계별로 차단한다.</p>
+  <figure><img src="screenshots/write.png" alt="일기 작성 화면"><figcaption>날짜, 감정, 짧은 일기를 입력하는 작성 화면</figcaption></figure>
+
+  <h3 class="page-break">3.2 AI 프롬프트 및 이미지 생성</h3>
+  <p>AiRepository가 키 확인, 프롬프트 생성, 이미지 API 호출, Base64 디코딩, 파일 저장과 실패 폴백을 담당한다.</p>
+  <pre><code>return runCatching {
+    val prompt = GeminiTextService(key)
+        .createImagePrompt(content, mood.label)
+        .imagePrompt
+    val response = imageService.generateImage(
+        apiKey = key,
+        request = GeminiImageRequest(/* prompt */)
+    )
+    val encoded = requireNotNull(response.firstBase64())
+    saveBytes(Base64.decode(encoded, Base64.DEFAULT))
+}.getOrElse {
+    createFallbackImage(mood)
+}</code></pre>
+  <p>생성 중에는 회전과 크기 변화가 있는 애니메이션을 표시하고, 결과는 fade와 scale 효과로 등장한다. API 키는 소스에 하드코딩하지 않고 Secrets Gradle Plugin과 <code>BuildConfig.AI_KEY</code>로 접근한다.</p>
+  <div class="shots two">
+    <figure><img src="screenshots/generating.png" alt="AI 생성 중"><figcaption>AI 생성 중 애니메이션</figcaption></figure>
+    <figure><img src="screenshots/detail.png" alt="AI 생성 결과"><figcaption>생성 이미지와 상세 기록</figcaption></figure>
+  </div>
+
+  <h3 class="page-break">3.3 감정 캘린더와 AI 한마디</h3>
+  <p>선택 월을 StateFlow로 관리하고 <code>flatMapLatest</code>로 Room 월별 쿼리를 구독한다. 커스텀 7열 Layout은 기록 날짜에 이미지 썸네일과 감정 아이콘을 표시하며, 미래 날짜와 미래 달을 비활성화한다.</p>
+  <pre><code>val entries: Flow&lt;List&lt;DiaryEntry&gt;&gt; = _month.flatMapLatest {
+    val range = monthRange(it)
+    repository.getMonth(range.first, range.last)
+}
+
+DayCell(
+    entry = entriesByDay[day],
+    enabled = date &lt;= LocalDate.now()
+)</code></pre>
+  <p>최근 7일 기록은 날짜별로 집계하고, 두 건 이상이면 Gemini가 짧은 감정 메시지를 생성한다. 데이터가 부족하거나 API가 실패하면 규칙 기반 로컬 메시지를 표시한다.</p>
+  <figure><img src="screenshots/calendar.png" alt="감정 캘린더"><figcaption>최근 감정 요약과 월별 감정 캘린더</figcaption></figure>
+
+  <h3 class="page-break">3.4 갤러리, 공유, 알림</h3>
+  <p>갤러리는 Room Flow를 관찰해 그리드와 리스트를 자동 갱신한다. 상세 화면에서는 일기 글 포함 여부를 선택하고 FileProvider URI를 ACTION_SEND Intent에 전달한다. 설정 화면에서는 TimePicker로 알림 시각을 지정하며, Receiver가 알림 후 다음 날 예약을 다시 생성한다.</p>
+  <pre><code>val shareIntent = Intent(Intent.ACTION_SEND).apply {
+    type = "image/*"
+    putExtra(Intent.EXTRA_STREAM, uri)
+    if (includeDiaryText) putExtra(Intent.EXTRA_TEXT, entry.content)
+    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+}</code></pre>
+  <div class="shots">
+    <figure><img src="screenshots/gallery.png" alt="갤러리"><figcaption>AI 그림 갤러리</figcaption></figure>
+    <figure><img src="screenshots/detail.png" alt="공유"><figcaption>글 포함 선택 공유</figcaption></figure>
+    <figure><img src="screenshots/settings.png" alt="설정"><figcaption>알림 및 백업 설정</figcaption></figure>
+  </div>
+
+  <h2>4. UI/UX 디자인 콘셉트</h2>
+  <p>토스식 정보 구조를 기반으로 파스텔 색상, 큰 둥근 모서리, 부드러운 여백을 강화했다. 스플래시 이후 핵심 행동인 작성 화면으로 바로 이동하며, 이모지 문자가 아닌 일관된 벡터 감정 아이콘을 사용한다.</p>
+  <ul>
+    <li>친근한 마이크로카피: “한두 문장이면 충분해요”, “짠! 오늘의 그림이 완성됐어요.”</li>
+    <li>좌우 20dp 여백, 큰 카드 간격, 둥근 입력창으로 시각적 부담 감소</li>
+    <li>핑크 계열 단일 강조색을 버튼과 선택 상태에 제한적으로 사용</li>
+    <li>생성·저장·비활성 날짜에 즉각적인 상태 피드백 제공</li>
+  </ul>
+
+  <h2>5. 트러블 슈팅 및 문제 해결</h2>
+  <h3>5.1 이미지 API 응답 형식 불일치</h3>
+  <p><strong>문제:</strong> 초기 엔드포인트와 DTO가 실제 이미지 모델 응답과 맞지 않아 AI 이미지 대신 폴백만 표시됐다.</p>
+  <p><strong>해결:</strong> <code>gemini-2.5-flash-image:generateContent</code> 엔드포인트, TEXT/IMAGE 응답 모달리티, <code>inlineData.data</code> Base64 파싱을 적용했다.</p>
+  <p><strong>결과:</strong> 실기기에서 실제 손그림 생성과 내부 PNG 저장을 확인했다.</p>
+
+  <h3>5.2 캘린더에서 작성 후 돌아가지 못하는 문제</h3>
+  <p><strong>원인:</strong> 하단 탭의 백스택과 날짜 인자 작성 화면의 진입 경로가 일관되게 관리되지 않았다.</p>
+  <p><strong>해결:</strong> 날짜 인자가 있는 작성 화면에 BackHandler를 등록하고, 캘린더 pop을 우선 시도한 뒤 없으면 현재 작성 화면을 제거하며 캘린더로 이동했다.</p>
+
+  <h3>5.3 같은 날짜 중복과 캘린더 오류</h3>
+  <p><strong>해결:</strong> date unique index, findByDate, 기존 ID update 정책을 결합해 날짜당 하나의 감정과 이미지만 유지했다.</p>
+
+  <h3>5.4 미래 날짜 기록</h3>
+  <p><strong>해결:</strong> DatePicker maxDate, 캘린더 셀 비활성화, 미래 달 이동 제한, ViewModel 날짜 보정의 네 단계로 차단했다.</p>
+
+  <h3>5.5 API 키 보안</h3>
+  <p><strong>해결:</strong> secrets.properties를 Git에서 제외하고 BuildConfig로만 접근한다. 공개 저장소에 노출된 키는 즉시 폐기하고 새 키를 발급해야 한다.</p>
+
+  <h2>6. 프로젝트 후기 및 향후 발전 방향</h2>
+  <h3>6.1 배운 점</h3>
+  <ul>
+    <li>Compose 상태와 Room Flow를 연결해 데이터 변경을 자동 반영하는 방법</li>
+    <li>생성형 AI API는 성공뿐 아니라 키 누락, 할당량, 네트워크 실패를 기본 흐름으로 설계해야 한다는 점</li>
+    <li>Navigation 백스택과 딥링크를 함께 사용할 때 진입 경로별 복귀 동작이 필요하다는 점</li>
+    <li>AlarmManager, PendingIntent, FileProvider의 Android 버전별 보안 제약 처리</li>
+  </ul>
+  <h3>6.2 현재 한계와 발전 방향</h3>
+  <ul>
+    <li>Firebase 백업은 No-op 기본 구현이며 실제 Firestore/Storage 연결은 향후 과제다.</li>
+    <li>사진 멀티모달 입력, 감정별 장기 통계, 이미지 스타일 선택을 추가할 수 있다.</li>
+    <li>앱 잠금, 생체 인증, 로컬 데이터 암호화로 민감한 일기 데이터를 보호할 수 있다.</li>
+    <li>Compose UI 테스트와 MockWebServer 기반 네트워크 테스트를 확대할 수 있다.</li>
+  </ul>
+
+  <h2>7. 프로젝트 요구사항 만족 여부</h2>
+  <table>
+    <tr><th>요구사항</th><th>상태</th><th>내용</th></tr>
+    <tr><td>Compose + Material 3</td><td class="status-done">완료</td><td>전체 UI Compose 구현</td></tr>
+    <tr><td>MVVM + Repository + Room</td><td class="status-done">완료</td><td>Flow, suspend, Factory 수동 주입</td></tr>
+    <tr><td>일기 작성과 날짜별 수정</td><td class="status-done">완료</td><td>날짜당 한 편, 미래 날짜 차단</td></tr>
+    <tr><td>AI 이미지 생성</td><td class="status-done">완료</td><td>Gemini, Base64 저장, 실패 폴백</td></tr>
+    <tr><td>갤러리/상세/공유</td><td class="status-done">완료</td><td>Coil, FileProvider, 글 포함 선택</td></tr>
+    <tr><td>감정 캘린더와 AI 한마디</td><td class="status-done">완료</td><td>월별 Flow, 최근 7일 분석</td></tr>
+    <tr><td>알림과 딥링크</td><td class="status-done">완료</td><td>AlarmManager, write/diary URI</td></tr>
+    <tr><td>API 키 분리</td><td class="status-done">완료</td><td>Secrets Gradle Plugin</td></tr>
+    <tr><td>Firebase 실제 백업</td><td class="status-part">선택 기능 미활성화</td><td>NoOp 구현으로 코어 빌드 분리</td></tr>
+    <tr><td>실행 화면 캡처</td><td class="status-done">완료</td><td>docs/screenshots 수록</td></tr>
+    <tr><td>APK 제공</td><td class="status-done">완료</td><td>releases 폴더 수록</td></tr>
+    <tr><td>2분/10분 영상</td><td class="todo">사용자 업로드 필요</td><td>README의 TODO URL 교체</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>제출 전 직접 입력:</strong> 표지의 작성자·학번·과목·제출일, README의 2분 및 10분 영상 URL을 실제 값으로 교체해야 한다.
+  </div>
+</body>
+</html>
