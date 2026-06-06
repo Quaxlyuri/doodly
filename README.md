@@ -70,7 +70,7 @@
 | 자료 | 링크 |
 |---|---|
 | 2분 요약 영상 | **(https://youtube.com/shorts/7BKu9byTO4I?si=FEyI5pFiT8EWsz7Y)** |
-| 10분 상세 발표 영상 | **[TODO: 10분 상세 발표 YouTube URL 입력]** |
+| 10분 상세 발표 영상 | **(https://www.youtube.com/watch?v=EUnVXUay5dI)** |
 | 프로젝트 최종 보고서 | [PDF 열기](docs/Doodly_Final_Report.pdf) · [편집용 Markdown](docs/FINAL_REPORT.md) |
 | APK 다운로드 | [Doodly v1.0 Debug APK](releases/Doodly-v1.0-debug.apk) |
 
@@ -191,14 +191,6 @@ adb shell am start -a android.intent.action.VIEW -d "doodly://diary/1"
 
 현재 제출 버전에서 Firebase 클라우드 백업은 **선택 기능으로 비활성화**되어 있으며, 로컬 Room 저장은 정상 동작합니다.
 
-## 제출 전 교체 항목
-
-- [ ] README의 2분 요약 영상 TODO를 실제 공개 URL로 교체
-- [ ] README의 10분 발표 영상 TODO를 실제 YouTube URL로 교체
-- [ ] `docs/FINAL_REPORT.md`의 작성자/학번/과목명 입력
-- [ ] 필요하면 PDF 표지의 작성자 정보를 입력한 뒤 PDF 재생성
-- [ ] GitHub `main` 브랜치에서 README 이미지와 APK 링크 확인
-- [ ] GitHub 저장소에 `secrets.properties`, `local.properties`가 포함되지 않았는지 확인
 
 ## 문서
 
